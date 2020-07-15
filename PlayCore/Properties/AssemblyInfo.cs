@@ -7,9 +7,9 @@ using Android.App;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("PlayCore")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("PlayCore Binding")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("PatGet")]
 [assembly: AssemblyProduct("PlayCore")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]

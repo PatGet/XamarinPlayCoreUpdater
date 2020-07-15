@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>PatGet, gabrieldwight</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/PatGet/XamarinPlayCoreUpdater</projectUrl>
+    <description>The Google PlayCore Library enables automatic Update of PlayStore Apps.</description>
+    <releaseNotes>This is the first Release of this Lib to NuGet</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>Xamarin, Android, PlayStore, Core</tags>
+  </metadata>
+</package>
