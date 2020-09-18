@@ -48,7 +48,7 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\core-1.7.2.aar" />
+    <LibraryProjectZip Include="Jars\playcore-1.8.0.aar" />
     <None Include="PlayCore.nuspec" />
   </ItemGroup>
   <ItemGroup>
