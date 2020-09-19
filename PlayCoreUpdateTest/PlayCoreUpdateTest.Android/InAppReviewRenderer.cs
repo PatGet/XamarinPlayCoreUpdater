@@ -11,6 +11,8 @@ namespace PlayCoreUpdateTest.Droid
         public void LaunchReview()
         {
 #if DEBUG
+            // FakeReviewManager does not interact with the Play Store, so no UI is shown
+            // and no review is performed. Useful for unit tests.
             var manager = new FakeReviewManager(MainActivity.Instance);
 #else         
             var manager = ReviewManagerFactory.Create(MainActivity.Instance);
@@ -25,23 +27,36 @@ namespace PlayCoreUpdateTest.Droid
         FakeReviewManager _fakeReviewManager;
         IReviewManager _reviewManager;
         bool _usesFakeManager;
-        void IOnCompleteListener.OnComplete(Com.Google.Android.Play.Core.Tasks.Task p0)
+        void IOnCompleteListener.OnComplete(Task p0)
         {
-            if (p0.IsSuccessful)
+            if (!p0.IsSuccessful)
+                return;
+            // Canceling the review raises an exception
+            try
             {
-                var review = p0.GetResult(Java.Lang.Class.FromType(typeof(ReviewInfo)));
-                if (_usesFakeManager)
-                {
-                    var x = _fakeReviewManager.LaunchReviewFlow(MainActivity.Instance, (ReviewInfo)review);
-                    x.AddOnCompleteListener(new OnCompleteListener(_fakeReviewManager));
-                }
-                else
-                {
-                    var x = _reviewManager.LaunchReviewFlow(MainActivity.Instance, (ReviewInfo)review);
-                    x.AddOnCompleteListener(new OnCompleteListener(_reviewManager));
-                }
+                LaunchReview(p0);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
+
+        private void LaunchReview(Task p0)
+        {
+            var review = p0.GetResult(Java.Lang.Class.FromType(typeof(ReviewInfo)));
+            if (_usesFakeManager)
+            {
+                var x = _fakeReviewManager.LaunchReviewFlow(MainActivity.Instance, (ReviewInfo)review);
+                x.AddOnCompleteListener(new OnCompleteListener(_fakeReviewManager));
+            }
+            else
+            {
+                var x = _reviewManager.LaunchReviewFlow(MainActivity.Instance, (ReviewInfo)review);
+                x.AddOnCompleteListener(new OnCompleteListener(_reviewManager));
+            }            
+        }
+        
         public OnCompleteListener(FakeReviewManager fakeReviewManager)
         {
             _fakeReviewManager = fakeReviewManager;
