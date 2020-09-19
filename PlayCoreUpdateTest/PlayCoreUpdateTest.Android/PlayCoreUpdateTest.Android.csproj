@@ -16,6 +16,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -92,7 +93,7 @@
       <Name>PlayCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlayCoreUpdateTest\PlayCoreUpdateTest.csproj">
-      <Project>{EC032212-8098-4BC1-ACAC-2425B0B67313}</Project>
+      <Project>{C645A9F0-2268-4164-9A15-429B63CF2A52}</Project>
       <Name>PlayCoreUpdateTest</Name>
     </ProjectReference>
   </ItemGroup>
