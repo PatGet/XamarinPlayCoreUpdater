@@ -3,10 +3,10 @@ using Com.Google.Android.Play.Core.Tasks;
 using Com.Google.Android.Play.Core.Review;
 using Com.Google.Android.Play.Core.Review.Testing;
 
-[assembly: Xamarin.Forms.Dependency(typeof(PlayCoreUpdateTest.Droid.InAppReviewRenderer))]
+[assembly: Xamarin.Forms.Dependency(typeof(PlayCoreUpdateTest.Droid.InAppReviewService))]
 namespace PlayCoreUpdateTest.Droid
 {
-    public class InAppReviewRenderer : IInAppReview
+    public class InAppReviewService : IInAppReview
     {
         public void LaunchReview()
         {
