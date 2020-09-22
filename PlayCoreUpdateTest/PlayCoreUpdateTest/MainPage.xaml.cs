@@ -17,5 +17,11 @@ namespace PlayCoreUpdateTest
         {
             InitializeComponent();
         }
+
+        void Button_Clicked(Object sender, EventArgs e)
+        {
+            var appReviewer = DependencyService.Get<PlayCoreUpdateTest.IInAppReview>();
+            appReviewer.LaunchReview();
+        }
     }
 }

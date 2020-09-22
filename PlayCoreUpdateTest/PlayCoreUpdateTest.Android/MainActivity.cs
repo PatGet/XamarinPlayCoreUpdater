@@ -18,12 +18,14 @@ namespace PlayCoreUpdateTest.Droid
     [Activity(Label = "PlayCoreUpdateTest", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        internal static MainActivity Instance { get; private set; }
         private const int _Request_Update = 4711;
         private const int APP_UPDATE_TYPE_SUPPORTED = AppUpdateType.Immediate;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            Instance = this;
 
             base.OnCreate(savedInstanceState);
 
