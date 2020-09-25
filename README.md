@@ -1,8 +1,22 @@
 ## Play.Core Library Bindings for Xamarin.Android
+[![NuGet](https://img.shields.io/badge/Nuget-1.8.0-blue.svg)](https://www.nuget.org/packages/PlayCore/)
+
 This repo contains a NuGet package that allows you to Support **in-app updates** and **in-app reviews** in your Xamarin Forms Android Apps.
 
+## Screenshots
+
+### In-App Review
+![](Screenshots/93619419-8802e580-f9a6-11ea-9c80-920f8a3fb196.png?raw=true)
+
+### In-App Updates
+
+Update Prompt           |  Update in Progress
+:-------------------------:|:-------------------------:
+![](Screenshots/Screenshot_20200924-222055_Google%20Play%20Store.jpg?raw=true)  |  ![](Screenshots/Screenshot_20200924-222114_Google%20Play%20Store.jpg?raw=true)
+
+
+
 ## Download
-[![NuGet](https://img.shields.io/badge/Nuget-1.0.0-blue.svg)](https://www.nuget.org/packages/PlayCore/)
 - Install the package into your Android project (https://www.nuget.org/packages/PlayCore/)
  
 ## Implementation
