@@ -17,23 +17,29 @@ Update Prompt           |  Update in Progress
 
 
 ## Download
-- Install the package into your Android project (https://www.nuget.org/packages/PlayCore/)
+- Install [the Nuget package](https://www.nuget.org/packages/PlayCore/) into your Android project 
  
 ## Implementation
+- If you are having crashes in your release build or if you set the Linker Behavior of your Android project to "Link SDK assemblies only", then you will need to add this to your [proguard file](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/release-prep/proguard?tabs=windows):
+```
+-keep class com.google.android.play.core.review.** { *; }
+-keep class com.google.android.play.core.appupdate.** { *; }
+-keep class com.google.android.play.core.tasks.** { *; }
+```
 - To support In-App Updates, you need to modify `MainActivity.cs` to initialise the IAppUpdateManager and define the OnSuccessListener. 
 - To support In-App Reviews, you need to use Dependency Injection to call the Review workflow from your Shared Project. Add an interface in the Shared Project and implement that interface in your Android project.
-- Although optional, using James Montemagno's Current Activity Plugin (https://github.com/jamesmontemagno/CurrentActivityPlugin) is recommended to retrieve the Context for the IReview object. Alternatively, the Sample uses a static object to pass the Context to the IAppReview implementation or you can use a singleton.
+- Although optional, using [James Montemagno's Current Activity Plugin](https://github.com/jamesmontemagno/CurrentActivityPlugin) is recommended to retrieve the Context for the IReview object. Alternatively, the Sample uses a static object to pass the Context to the IAppReview implementation or you can use a singleton.
 
 To make it easier for you, check the Sample project to see examples of implementations for both features.
 
 ## Google Guidelines
-- See https://developer.android.com/guide/playcore/in-app-updates for more info on In-App Updates guidelines. 
-- See https://developer.android.com/guide/playcore/in-app-review for info on In-App Reviews guidelines. 
+- See Android's Official [Play Core In-App-Updates docs](https://developer.android.com/guide/playcore/in-app-updates) for more info on In-App Updates guidelines. 
+- See Android's Official [Play Core In-App-Review docs](https://developer.android.com/guide/playcore/in-app-review) for info on In-App Reviews guidelines. 
 
 ## Possible Pitfalls
 - You need to have the app submitted to at least an internal test track or internal app sharing to fully test the features. 
 
-- If you use **Google App signing** (https://support.google.com/googleplay/android-developer/answer/7384423?hl=en), you can only test the update process with an app from the store and an update from the store. You can just disable automatic app updates, wait for the new version to appear in the Play Store and than manually start your App.
+- If you use [**Google App signing**](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en), you can only test the update process with an app from the store and an update from the store. You can just disable automatic app updates, wait for the new version to appear in the Play Store and than manually start your App.
 
 - If you test in-app reviews with an app submitted to Internal App Sharing, the **Submit** button for the review will be grayed out. This is also clearly stated in the Google docs. 
 
