@@ -28,8 +28,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Android Build
         run: |
-          nuget restore
           msbuild /t:restore PlayCore.sln
-          # cd PlayCore
-          # msbuild PlayCore.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
           ls -R
