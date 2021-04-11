@@ -32,3 +32,4 @@ jobs:
           msbuild /t:restore PlayCore.sln
           # cd PlayCore
           # msbuild PlayCore.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
+          ls *
