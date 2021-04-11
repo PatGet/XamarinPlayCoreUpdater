@@ -28,6 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Android Build
         run: |
-          cd PlayCore
           nuget restore
+          cd PlayCore
           msbuild PlayCore.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
