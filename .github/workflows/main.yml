@@ -25,9 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - uses: microsoft/setup-msbuild@v1.0.2
-        with:
-         vs-version: '[16.4,16.5)'
+      #- uses: microsoft/setup-msbuild@v1.0.2
+       # with:
+        # vs-version: '[16.4,16.5)'
 
       # Runs a single command using the runners shell
       - name: Android Build
