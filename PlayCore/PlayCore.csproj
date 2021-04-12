@@ -49,7 +49,7 @@
     <None Include="build\monoandroid90\PlayCore.targets" />
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\playcore-1.8.0.aar" />
+    <LibraryProjectZip Include="Jars\playcore-1.10.0.aar" />
     <None Include="PlayCore.nuspec" />
   </ItemGroup>
   <ItemGroup>
