@@ -29,4 +29,5 @@ jobs:
       - name: Android Build
         run: |
           msbuild /t:restore PlayCore.sln
+          msbuild /p:Configuration=Release PlayCore.sln  /t:Rebuild
           ls -R
