@@ -13,4 +13,15 @@
   <attr path="/api/package[@name='com.google.android.play.core.install']/class[@name='InstallException']" name="extends">Java.Lang.Object</attr> 
   <attr path="/api/package[@name='com.google.android.play.core.tasks']/class[@name='RuntimeExecutionException']" name="extends">Java.Lang.Object</attr> 
   <attr path="/api/package[@name='com.google.android.play.core.listener']/interface[@name='StateUpdatedListener']/method[@name='onStateUpdate' and count(parameter)=1 and parameter[1][@type='StateT']]/parameter[1]" name="type">Java.Lang.Object</attr>
+
+  <!-- 
+  Removing StateUpdatedListener implementation from InstallStateUpdatedListener interface 
+  and making proper onStateUpdate method mapping where StateT is InstallState 
+  -->
+  <remove-node path="/api/package[@name='com.google.android.play.core.install']/interface[@name='InstallStateUpdatedListener']/implements[contains(@name,'StateUpdatedListener')]"/>
+  <add-node path="/api/package[@name='com.google.android.play.core.install']/interface[@name='InstallStateUpdatedListener']">
+    <method abstract="true" deprecated="not deprecated" final="false" name="onStateUpdate" jni-signature="(Lcom/google/android/play/core/install/InstallState;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      <parameter name="state" type="com.google.android.play.core.install.InstallState" jni-type="Lcom/google/android/play/core/install/InstallState;" />
+    </method>
+  </add-node>
 </metadata>
